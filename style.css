@@ -126,6 +126,7 @@ h2 {
 }
 
 .lang-overview-expand-content {
+    width: 100%;
     display: none;
     border-radius: 10px;
     margin-right: 10px;
