@@ -1,18 +1,164 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Consolas', monospace;
     text-align: center;
-    background-color: #2f2f2f;
-    padding: 20px;
+    background-color: #1e1f1c;
+    padding: 0px;
+    margin: 0px;
 }
 
 header {
-    background: #5f5f5f;
-    color: white;
+    background: #272727;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
     margin-top: 20px;
     font-size: 14px;
     color: #5f5f5f;
+}
+
+main {
+    flex: 2;
+    padding: 20px;
+}
+
+h1 {
+    color: #a6e22e; /* Set the color to white (you can change it if you prefer another color) */
+    font-size: 36px; /* Adjust the size if you need */
+    text-align: center;
+}
+.typewriter h1{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .1em solid #fd971f; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 3.5s step-end forwards;
+}
+
+h2 {
+    color: #a6e22e; /* Set the color to white (you can change it if you prefer another color) */
+    font-size: 18px; /* Adjust the size if you need */
+}
+
+p {
+    color: #66d9ef
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px;
+    gap: 30px;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 400px;
+    min-width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-box {
+    background: #272822;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lang-img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.red-code-highlight {
+    color: #f92672;
+}
+
+/* Main container styling */
+/* Box container should be a flex container to display boxes side by side */
+.lang-overview-container {
+    flex: 1;
+    display: flex;               /* Use flexbox to arrange elements */
+    flex-direction: column;      /* Stack the boxes vertically */
+    padding: 10px;
+    gap: 20px;                   /* Add space between the boxes */                /* Allow the container to take full available width */
+}
+
+/* Styling each box */
+.lang-overview-box {
+    width: 100%;                 /* Set a width for the box */
+    height: 50px;                /* Set a height for the box */
+    background-color: #41433a;   /* Set the background color */
+    color: #b9a27c;                 /* Set the text color */
+    display: flex;                /* Use flexbox to align logo and text */
+    justify-content: center;  /* Align children from the start */
+    align-items: center;          /* Center vertically */
+    flex-direction: row;          /* Arrange logo and text in a row */
+    border-radius: 10px;          /* Round the corners */
+    padding: 10px;                /* Add padding inside the box */
+    transition: all 0.3s ease-in-out;    /* Smooth transition when hovered */
+    position: relative;           /* For positioning the extra text on hover */
+    text-align: center;           /* Center the text inside the box */
+    overflow: hidden;
+}
+
+/* Styling for logos */
+.lang-overview-box-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+/* Styling for the text inside the box */
+.lang-overview-box-title {
+    font-size: 18px;             /* Set the font size */
+    font-weight: bold;           /* Make the text bold */
+    margin-right: 10px;
+    color: #b9a27c;
+}
+
+.lang-overview-expand-content {
+    display: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+/* Hover effect to expand the box and reveal more text */
+.lang-overview-box:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #41433a;
+    justify-content: flex-start;
+    height: auto;  /* Adjust height based on content */
+    max-height: 400px;  /* Optional: max limit for box expansion */
+}
+
+.lang-overview-box:hover .lang-overview-box-logo {
+    margin-left: 10px;
+}
+
+.lang-overview-box:hover .lang-overview-expand-content {
+    display: block;  /* Show the content */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+@keyframes blink-caret {
+    0% { border-color: #fd971f;}
+    100% { border-color: transparent }
 }
